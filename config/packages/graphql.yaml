@@ -8,6 +8,7 @@ overblog_graphql:
             types:
                 - type: yaml
                   dir: '%kernel.project_dir%/config/graphql'
+                  suffix: ~
     errors_handler:
         enabled: true
         rethrow_internal_exceptions: true
