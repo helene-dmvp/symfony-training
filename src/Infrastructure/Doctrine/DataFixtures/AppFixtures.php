@@ -134,6 +134,7 @@ final class AppFixtures extends Fixture
                 $gender[array_rand($gender)],
                 $speciesList[array_rand($speciesList)],
                 rand(1, 40),
+                new \DateTime(sprintf('-%d years', rand(1, 40))),   // ← ligne ajoutée
                 '#000000'
             );
 

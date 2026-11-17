@@ -10,3 +10,14 @@ Mutation:
                     "createDinosaur",
                     args["input"]
                     )
+            loginUser:
+                type: 'String!'
+                args:
+                    email: { type: 'String!' }
+                    password: { type: 'String!' }
+                resolve: |
+                    @=mutation(
+                    "loginUser",
+                    args["email"],
+                    args["password"]
+                    )

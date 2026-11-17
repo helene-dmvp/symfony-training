@@ -15,3 +15,8 @@ services:
               alias: createDinosaur
               method: createDinosaur
 
+    Application\GraphQL\LoginResolver:
+        tags:
+            - name: overblog_graphql.mutation
+              alias: loginUser
+              method: loginUser

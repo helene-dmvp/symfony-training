@@ -17,3 +17,6 @@ services:
 
   Infrastructure\Doctrine\DataFixtures\:
     resource: '../src/Infrastructure/Doctrine/DataFixtures/**.php'
+
+  Infrastructure\Lexik\LexikJwtEncoder: ~
+  Application\Security\JWTEncoder: '@Infrastructure\Lexik\LexikJwtEncoder'
