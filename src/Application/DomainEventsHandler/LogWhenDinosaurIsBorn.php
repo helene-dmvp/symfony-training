@@ -22,6 +22,7 @@ final class LogWhenDinosaurIsBorn
 
     public function __invoke(DinosaurIsBorn $event): void
     {
+        throw new \RuntimeException('-------> boom');
         $dinosaurId = $event->getAggregateRootId();
 
         $dinosaur = $this->dinosaursCollection->find($dinosaurId);

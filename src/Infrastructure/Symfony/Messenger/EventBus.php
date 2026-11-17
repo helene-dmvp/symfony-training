@@ -20,7 +20,8 @@ final class EventBus implements EventBusInterface
     public function dispatch(object $event): void
     {
         try {
-            $this->handle($event);
+            //$this->handle($event);
+            $this->messageBus->dispatch($event); // on utilise l'appel asyncrhone plutot
         } catch (HandlerFailedException $handlerFailedException) {
             $nestedExceptions = $handlerFailedException->getWrappedExceptions();
 
