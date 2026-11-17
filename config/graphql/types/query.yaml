@@ -1,0 +1,22 @@
+Query:
+    type: object
+    config:
+        fields:
+            dinosaurs:
+                type: '[Dinosaur!]!'
+                args: { search: { type: 'String' } }
+                resolve: |
+                    @=query(
+                    "dinosaurs",
+                    args["search"]
+                    )
+            dinosaur:
+                type: 'Dinosaur!'
+                args: { id: { type: 'ID!' } }
+                access: "@=isGranted('ROLE_USER')"
+                resolve: |
+                    @=query(
+                    "dinosaur",
+                    args["id"]
+                    )
+

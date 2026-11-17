@@ -1,0 +1,23 @@
+Mutation:
+    type: object
+    config:
+        fields:
+            createDinosaur:
+                type: 'Dinosaur!'
+                args: { input: { type: 'CreateDinosaurInput!' } }
+                resolve: |
+                    @=mutation(
+                    "createDinosaur",
+                    args["input"]
+                    )
+            loginUser:
+                type: 'String!'
+                args:
+                    email: { type: 'String!' }
+                    password: { type: 'String!' }
+                resolve: |
+                    @=mutation(
+                    "loginUser",
+                    args["email"],
+                    args["password"]
+                    )
